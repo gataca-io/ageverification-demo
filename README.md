@@ -1,6 +1,39 @@
-# Getting Started with Create React App
+# Gataca Legal Age Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an example of how you could integrate a simple application with Gataca Vouch.
+
+It consists on a simple react application of a mock video web server that wants to perform age validation, that is served dockerized under an nginx. 
+
+The use case demonstrated is that using a single vouch app integration is:
+- First, we will use a nginx-based OIDC client integration to access the website, which is restricted to people over 16 years old. The client we will use is [LUA Resty OpenIDC](https://github.com/zmartzone/lua-resty-openidc)
+- Then, we will use a react-based OIDC client integration to view some of the videos which are restricted to users over 18 years old. The client we will use is [React OIDC Context](https://github.com/authts/react-oidc-context)
+
+
+## Prerequisites
+
+You will need a vouch client from [Gataca Studio](https://studio.gataca.io) that has configured the following scopes:
+````
+over16
+over18
+````
+
+You also will need to configure the following 3 redirect_uris for your integration (prepended by your domain):
+
+````
+/adult
+/code
+/video
+````
+
+### Environment variables
+
+You will need to set the following environment variables:
+```bash
+CLIENT_ID=*******
+CLIENT_SECRET=********
+IDP_HOST=https://vouch.gataca.io
+SERVER_NAME=localhost ##Change to yours
+```
 
 ## Available Scripts
 
@@ -11,36 +44,10 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+As this is not dockerized, only the react-oidc-client will work.
 
-### `yarn test`
+### `docker build -t legal-age-demo .`
+Builds the docker container locally to be able to run it
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `docker run --env-file docker.env --name legalage -p 80:80 legal-age-demo`
+Run the built docker container, providing an environment file with the requested variables.Open [http://localhost](http://localhost) -or the domain selected- to view and test the complete app in the browser.
