@@ -1,15 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import AccessDenied from './AccessDenied';
+import AdultContent from './AdultContent';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  { 
+    path: "/denied",
+    element: <AccessDenied/>,
+  },
+  {
+    path:"/adult",
+    element: <AdultContent/>
+  }
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
