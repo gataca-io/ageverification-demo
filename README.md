@@ -39,15 +39,21 @@ SERVER_NAME=localhost ##Change to yours
 
 In the project directory, you can run:
 
-### `yarn start`
+```
+yarn start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 As this is not dockerized, only the react-oidc-client will work.
 
-### `docker build -t legal-age-demo .`
+```
+docker build -t legal-age-demo .
+```
 Builds the docker container locally to be able to run it
 
-### `docker run --env-file docker.env --name legalage -p 80:80 legal-age-demo`
+```
+docker run --env-file docker.env --name legalage -p 80:80 legal-age-demo
+```
 Run the built docker container, providing an environment file with the requested variables.Open [http://localhost](http://localhost) -or the domain selected- to view and test the complete app in the browser.
