@@ -1,4 +1,4 @@
-# Gataca Legal Age Demo
+# Gataca - Legal Age Demo
 
 This project is an example of how you could integrate a simple application with Gataca Vouch.
 
