@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legalage
+  namespace: demos
+  labels:
+    app: legalage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: legalage
+  template:
+    metadata:
+      labels:
+        app: legalage
+    spec:
+      securityContext:
+        sysctls:
+        - name: net.ipv4.ip_unprivileged_port_start
+          value: "80"
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: demoland
+          image: gatacaid/legal-age-demo:2.0.0-SNAPSHOT
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              name: http
+          resources:
+            limits:
+              memory: "200Mi"
+              cpu: "0.1"
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
+          env:
+            - name: IDP_HOST
+              value: https://vouch.gataca.io
+            - name: SERVER_NAME
+              value: legalage.gataca.io
+            - name: CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: vouch-demo
+                  key: client_id
+            - name: CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: vouch-demo
+                  key: client_secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: legalage
+  namespace: demos
+  labels:
+    app: legalage
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      name: http
+      protocol: TCP
+  selector:
+    app: legalage
