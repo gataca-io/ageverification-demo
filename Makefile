@@ -11,13 +11,13 @@ build: install
 	yarn build
 
 snapshotX-mac: build
-	docker buildx build --platform linux/arm64/v8 -t gatacaid/legal-age-demo:$(VERSION)-SNAPSHOT . --push
+	docker buildx build --platform linux/arm64/v8 -t ghcr.io/gataca-io/ageverification-demo/legal-age-demo:$(VERSION)-SNAPSHOT . --push
 
 snapshotX: build
-	docker buildx build --platform linux/amd64 -t gatacaid/legal-age-demo:$(VERSION)-SNAPSHOT . --push
+	docker buildx build --platform linux/amd64 -t ghcr.io/gataca-io/ageverification-demo/legal-age-demo:$(VERSION)-SNAPSHOT . --push
 
 releaseX: build
-	docker buildx build --platform linux/amd64 -t gatacaid/legal-age-demo:$(VERSION) -t gatacaid/legalAgeDemo:$(VERSION)-SNAPSHOT . --push
+	docker buildx build --platform linux/amd64 -t ghcr.io/gataca-io/ageverification-demo/legal-age-demo:$(VERSION) -t ghcr.io/gataca-io/ageverification-demo/legalAgeDemo:$(VERSION)-SNAPSHOT . --push
 
 deploy-dev:
 	kubectl config use-context dev && kubectl apply -f deployment/deployment-dev.yml
