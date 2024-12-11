@@ -20,10 +20,10 @@ spec:
         - name: net.ipv4.ip_unprivileged_port_start
           value: "80"
       imagePullSecrets:
-        - name: regcred
+        - name: ghcr
       containers:
         - name: demoland
-          image: gatacaid/legal-age-demo:2.0.0-SNAPSHOT
+          image: ghcr.io/gataca-io/ageverification-demo/legal-age-demo:2.0.0-SNAPSHOT
           imagePullPolicy: Always
           ports:
             - containerPort: 80
