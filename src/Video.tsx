@@ -61,7 +61,7 @@ const signinArgs: SigninPopupArgs = {
         width: 400,
         height: 400,
     },
-    scope: 'openid legalAge',
+    scope: 'openid over18fae',
 }
 
 const CarrouselNewest: ICarrouselProps = {
