@@ -13,8 +13,8 @@ The use case demonstrated is that using a single vouch app integration is:
 
 You will need a vouch client from [Gataca Studio](https://studio.gataca.io) that has configured the following scopes:
 ````
-over16
-over18
+over16fae
+over18fae
 ````
 
 You also will need to configure the following 3 redirect_uris for your integration (prepended by your domain):

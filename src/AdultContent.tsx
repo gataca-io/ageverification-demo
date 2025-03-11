@@ -62,7 +62,7 @@ const signinArgs: SigninPopupArgs = {
         width: 400,
         height: 400,
     },
-    scope: 'openid legalAge',
+    scope: 'openid over18fae',
 }
 
 const CarrouselNewest: ICarrouselProps = {
@@ -101,7 +101,7 @@ export const oidcConfig: AuthProviderProps = {
     client_id: `${process.env.REACT_APP_CLIENT_ID}`,
     client_secret: `${process.env.REACT_APP_CLIENT_SECRET}`,
     redirect_uri: `${process.env.REACT_APP_SERVER_NAME}/video`,
-    scope: 'openid legalAge',
+    scope: 'openid over18fae',
     response_mode: 'query',
     response_type: 'code',
     onSigninCallback: onSigninCallback,
@@ -127,7 +127,7 @@ const AdultContent = (props: any) => {
         auth.signinPopup(signinArgs)
             .then((user) => {
                 console.log('GOT USER', user)
-                if (user?.profile?.legalAge === 'accepted') {
+                if (user?.profile?.over18fae === 'accepted') {
                     setDisplay(true)
                 } else {
                     setRestricted(true)
