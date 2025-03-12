@@ -1,23 +1,73 @@
-const RestrictedModal = (props: any) => {
-    return (
-        <div className="modal">
-            <div
-                className="lockImage"
-                style={{
-                    backgroundImage:
-                        'url(https://assets.api.uizard.io/api/cdn/stream/8fc7e9cb-5670-41b6-9e1d-2316e410724f.png)',
-                }}
-            />
-            <div className="title">Content Restricted</div>
-            <div className="subtitle">
-                This content is blocked due to age restrictions.
-            </div>
-            <div className="description">
-                Please verify your age to proceed.
-            </div>
-            <button className="button">Verify Age</button>
-        </div>
-    )
+import { useTranslation } from 'react-i18next'
+import './components.css'
+import { Button } from '@gataca/design-system'
+import React from 'react'
+
+interface RestrictedModalProps {
+    close?: () => void
 }
+
+const RestrictedModal: React.FC<RestrictedModalProps> = React.memo(
+    ({ close }) => {
+        const { t } = useTranslation()
+
+        return (
+            <>
+                <div className="restrictedModal__overlay" onClick={close}></div>
+                <div className="restrictedModal">
+                    {close ? (
+                        <div className="restrictedModal__close">
+                            <svg
+                                onClick={close}
+                                className="restrictedModal__close__svg"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
+                                <path
+                                    d="M20 4L4 20M4 4L20 20"
+                                    stroke="#e4e4e4"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </div>
+                    ) : null}
+                    <div
+                        className="restrictedModal__image"
+                        style={{
+                            backgroundImage:
+                                'url(https://freesvg.org/img/coredump-Keepass-dock-icon.png)',
+                        }}
+                    />
+                    <div className="restrictedModal__content">
+                        <p className="heading4 neutral100 textAlignCenter ">
+                            {t('contentRestricted')}
+                        </p>
+                        <p className="bodyRegularMD neutral100 textAlignCenter marginTop5">
+                            {t('blockedDueAge')}
+                        </p>
+                        <p className="bodyRegularMD neutral100 textAlignCenter">
+                            {t('verifyToProceed')}
+                        </p>
+                        <Button
+                            color="purple"
+                            onPress={() => {}}
+                            showText
+                            id="restrictedModal__content__button"
+                            state="enable"
+                            style="fill"
+                            text={t('verifyAge')}
+                            textSize="large"
+                        />
+                    </div>
+                </div>
+            </>
+        )
+    }
+)
 
 export default RestrictedModal

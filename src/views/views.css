@@ -1,0 +1,87 @@
+/* HOME */
+.initialView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    padding: 20px;
+    top: 0;
+}
+
+@media (min-width: 640px) {
+    .initialView {
+        padding: 40px;
+    }
+}
+
+.initialView__languageSelector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.initialView__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 532px;
+    text-align: center;
+    gap: 20px;
+}
+
+@media (min-width: 640px) {
+    .initialView__content {
+        gap: 32px;
+    }
+}
+
+@media (min-width: 840px) {
+    .initialView__content {
+        max-width: none;
+    }
+}
+
+.initialView__content_title {
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+@media (min-width: 640px) {
+    .initialView__content_title {
+        font-size: 58px;
+    }
+}
+
+.initialView__content__stores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+#verifyAge__button {
+    background-color: var(--primary800) !important;
+    border-radius: 20px !important;
+}
+
+#verifyAge__button:not(:hover) {
+    background-color: var(--primary700) !important;
+}
+
+/* ADULT CONTENT */
+.view__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}

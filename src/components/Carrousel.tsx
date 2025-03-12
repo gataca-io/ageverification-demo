@@ -1,5 +1,7 @@
+import React from 'react'
 import { ICard } from '../model/interfaces'
 import Card from './Card'
+import { useTranslation } from 'react-i18next'
 
 export type ICarrouselProps = {
     name: string
@@ -7,17 +9,25 @@ export type ICarrouselProps = {
     display?: () => void
 }
 
-const Carrousel = (props: ICarrouselProps) => {
-    return (
-        <div className="carrousel">
-            <div className="subtitle">{props.name}</div>
-            <div className="carrouselContainer">
-                {props.cards?.map((c: ICard) => (
-                    <Card {...c} onClick={props.display}></Card>
-                ))}
+const Carrousel: React.FC<ICarrouselProps> = React.memo(
+    (props: ICarrouselProps) => {
+        const { t } = useTranslation()
+
+        return (
+            <div className="carrousel">
+                <div className="bodyRegularMD neutral100">{t(props.name)}</div>
+                <div className="carrousel__container marginTop20">
+                    {props.cards?.map((c: ICard, index: number) => (
+                        <Card
+                            key={`card__${index}`}
+                            {...c}
+                            onClick={props.display}
+                        ></Card>
+                    ))}
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
+)
 
 export default Carrousel
