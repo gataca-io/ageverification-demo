@@ -15,8 +15,6 @@ const LanguageSelector = () => {
     const storedLang = localStorage.getItem('i18nextLng')
     const changeLanguageHandler = (e: any) => {
         const newLang = e.target.value
-        console.log('changeLanguageHandler newLang', newLang)
-
         setLang(newLang)
         localStorage.setItem('i18nextLng', newLang)
         i18n?.changeLanguage(newLang)

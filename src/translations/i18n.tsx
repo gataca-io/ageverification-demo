@@ -53,17 +53,14 @@ i18n.use(XHR)
 
 // Check the localstorage saved language
 const storedLang = localStorage.getItem('i18nextLng')
-
 const browserLang = navigator.language.slice(0, 2)
 
-console.log('i18nextLng', storedLang)
 const initialLang =
     storedLang && supportedLngs?.includes(storedLang)
         ? storedLang
         : browserLang && supportedLngs?.includes(browserLang)
         ? browserLang
         : 'en'
-console.log('initialLang', initialLang, 'browserLang', browserLang)
 
 export default i18n
 export { initialLang, storedLang, supportedLngs }
