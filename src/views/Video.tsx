@@ -51,7 +51,7 @@ const VideoScreen: React.FC = React.memo((props: any) => {
     }
 
     return (
-        <BaseLayout footerText={t('unleashDesires')}>
+        <BaseLayout footerText={t('unleashDesires')} noRightPadding>
             <div className="view__content">
                 <Carrousel {...CarrouselContinue}></Carrousel>
                 <Carrousel {...CarrouselNewest}></Carrousel>

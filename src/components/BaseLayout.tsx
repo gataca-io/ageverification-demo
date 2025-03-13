@@ -1,9 +1,10 @@
 import './components.css'
+import cx from 'classnames'
 import LanguageSelector from './LanguageSelector'
 
 const BaseLayout = (props: any) => {
     return (
-        <div className="baseLayout">
+        <div className={cx('baseLayout')}>
             <header className="baseLayout__header">
                 <div className="baseLayout__header__left">
                     <svg
@@ -41,7 +42,15 @@ const BaseLayout = (props: any) => {
 
                 <LanguageSelector />
             </header>
-            <div className="baseLayout__body">{props.children}</div>
+            <div
+                className={cx(
+                    props?.noRightPadding
+                        ? 'baseLayout__body baseLayout__body--noRightPadding'
+                        : 'baseLayout__body'
+                )}
+            >
+                {props.children}
+            </div>
         </div>
     )
 }
