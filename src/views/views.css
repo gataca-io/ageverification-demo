@@ -1,0 +1,109 @@
+/* HOME */
+.initialView {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* padding: 0; */
+}
+
+@media (min-width: 640px) {
+    .initialView {
+        padding: 0 20px;
+    }
+}
+
+.initialView__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* height: 100%;
+    width: 100%; */
+    /* width: 90%; */
+    max-width: 100%;
+    width: 950px;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 12px;
+    background: var(--neutral900);
+}
+
+@media (min-width: 675px) {
+    .initialView__content {
+        padding: 58px;
+    }
+}
+
+@media (min-width: 940px) {
+    .initialView__content {
+        padding: 116.465px 166px;
+    }
+}
+
+@media (min-width: 840px) {
+    .initialView__content {
+        /* max-width: none; */
+    }
+}
+
+/* .initialView__content > h1, */
+.initialView__content > p {
+    max-width: 575px;
+}
+.initialView__content_title {
+    font-family: 'Ubuntu';
+    font-size: 40px;
+    font-style: normal;
+    line-height: 48px;
+}
+
+@media (min-width: 675px) {
+    .initialView__content_title {
+        font-size: 58px;
+        line-height: 64px;
+    }
+}
+
+/* @media (min-width: 1200px) {
+    .initialView__content_title {
+        font-size: 77.643px;
+        line-height: 93.172px;
+    }
+} */
+
+.initialView__content__stores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+#initialView__content__button {
+    background-color: var(--tertiary500) !important;
+}
+
+#initialView__content__button:not(:hover) {
+    background-color: var(--tertiary600) !important;
+}
+
+/* ADULT CONTENT */
+.view__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 24px;
+    justify-content: center;
+}
+
+@media (min-width: 640px) {
+    .view__content {
+        gap: 46.59px;
+    }
+}

@@ -1,0 +1,63 @@
+:root {
+    /*theme as default */
+
+    /* Neutral */
+    --neutral100: #ffffff;
+    --neutral200: #f2f2f2;
+    --neutral300: #e4e4e4;
+    --neutral400: #c6c6c8;
+    --neutral500: #a9a9ac;
+    --neutral600: #8c8c90;
+    --neutral700: #707074;
+    --neutral800: #545458;
+    --neutral900: #39393c;
+    --neutral1000: #1e1e20;
+
+    /* Primary */
+    --primary100: #f2f2ff;
+    --primary200: #dedefb;
+    --primary300: #cccbf8;
+    --primary400: #a5a4e8;
+    --primary500: #8281d7;
+    --primary600: #6361c7;
+    --primary700: #7e22cc; /* => primary700 and primary800 custom for this project */
+    --primary800: #6219a2;
+    --primary900: #1b1a5f;
+    --primary1000: #0c0b33;
+
+    /* Alert */
+    --alert100: #ffdedf;
+    --alert200: #ee888c;
+    --alert300: #dc3d43;
+    --alert400: #8d1a1e;
+    --alert500: #3d0608;
+
+    /* Tertiary */
+    --tertiary100: #fff2f6;
+    --tertiary200: #ffd4e1;
+    --tertiary300: #ffb6cd;
+    --tertiary400: #f97e79;
+    --tertiary500: #e85a84;
+    --tertiary600: #dc3164;
+    --tertiary700: #b22851;
+    --tertiary800: #891e3e;
+    --tertiary900: #5f152b;
+    --tertiary1000: #360c18;
+
+    /* Skeletons */
+    --skeletonLightBG: #e0e0e0;
+
+    /* Gray */
+    --gray600: #757575;
+    --gray700: #707074;
+    --gray300: #e4e4e4;
+
+    /* Box Shadows */
+    --boxShadowLigh: rgba(12, 11, 51, 0.12);
+
+    /* Font variables */
+    --base: 'Poppins', Helvetica;
+    --custom: 'Ubuntu', Helvetica;
+    --simple: 'Work Sans';
+    --default: 'Poppins', Helvetica;
+}

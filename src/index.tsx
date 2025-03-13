@@ -1,38 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { AuthProvider } from 'react-oidc-context'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import AccessDenied from './AccessDenied'
-import AdultContent, { oidcConfig } from './AdultContent'
+import { oidcConfig } from './views/AdultContent'
 import App from './App'
-import VideoScreen from './Video'
-import './index.css'
 import reportWebVitals from './reportWebVitals'
-
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <App />,
-    },
-    {
-        path: '/denied',
-        element: <AccessDenied />,
-    },
-    {
-        path: '/adult',
-        element: <AdultContent />,
-    },
-    {
-        path: '/video',
-        element: <VideoScreen />,
-    },
-])
+import { ThemeProvider } from '@gataca/design-system'
+import './styles/styleguide.css'
+import './styles/reset.css'
+import './styles/colors.css'
+import './styles/fonts.css'
+import './styles/spacing.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         <AuthProvider {...oidcConfig}>
-            <RouterProvider router={router} />
+            <ThemeProvider label={'PRIMARY'}>
+                <App />
+            </ThemeProvider>
         </AuthProvider>
     </React.StrictMode>
 )
