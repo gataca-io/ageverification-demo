@@ -22,7 +22,6 @@ const Card: React.FC<ICard> = React.memo((props: ICard) => {
             <div
                 className="card__content"
                 onClick={() => {
-                    console.log('onClick', props.onClick)
                     setClicked(true)
                     if (props.onClick) {
                         props.onClick()
