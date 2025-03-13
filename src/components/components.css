@@ -71,6 +71,7 @@
     width: 100%;
     height: 320px;
     margin-top: 24px;
+    max-width: 1574px;
 }
 
 @media (min-width: 640px) {

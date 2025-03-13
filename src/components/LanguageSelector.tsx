@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import i18n, { initialLang } from '../translations/i18n'
+import './components.css'
 
 const languages = [
     { code: 'en', name: 'English' },
