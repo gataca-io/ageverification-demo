@@ -1,5 +1,4 @@
 {
-    "adultContent": "Adult Content",
     "blockedDueAge": "This content is blocked due to age restrictions.",
     "category_0": "Temptation, 4 series",
     "category_1": "Seduction, 12 series",
@@ -14,7 +13,10 @@
     "mustBe16": "You must be 16 years or older to access this site.",
     "name_continue": "Continue Watching",
     "name_newest": "Newest Releases",
+    "recommended": "Recommended For You",
     "requires18": "Requires 18+",
+    "s1E1": "S1. E1",
+    "s3E3": "S3. E3",
     "title_0": "Actual Temptations",
     "title_1": "Seductive Encounters",
     "title_2": "Passionate Journeys",
@@ -28,6 +30,5 @@
     "unleashDesires": "Unleash your desires.",
     "verifyAge": "Verify Age",
     "verifyToProceed": "Please verify your age to proceed.",
-    "welcome": "Welcome to SensualVisions",
-    "youllneedIdWallet": "You'll need an ID Wallet with a valid age proof."
+    "welcome": "Welcome to "
 }

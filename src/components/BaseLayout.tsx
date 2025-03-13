@@ -1,4 +1,3 @@
-import cx from 'classnames'
 import './components.css'
 import LanguageSelector from './LanguageSelector'
 
@@ -8,29 +7,41 @@ const BaseLayout = (props: any) => {
             <header className="baseLayout__header">
                 <div className="baseLayout__header__left">
                     <svg
+                        width="16"
+                        height="17"
                         className="baseLayout__header__left__icon"
+                        viewBox="0 0 16 17"
+                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 1000 1000"
-                        fill="#ffffff"
                     >
-                        <path
-                            fill="#ffffff"
-                            d="M500,225.6C178.5,225.6,10,462.4,10,500c0,37.6,168.5,274.4,490,274.4c321.4,0,490-236.8,490-274.4C990,462.4,821.4,225.6,500,225.6z M500,711.1c-120.3,0-217.8-94.5-217.8-211.1S379.7,288.9,500,288.9c120.3,0,217.8,94.5,217.8,211.1S620.3,711.1,500,711.1z M500,500c-21.9,19.9-105.5-32.5-105.5,0c0,60.1,47.3,108.9,105.5,108.9c58.3,0,105.5-48.7,105.5-108.9c0-60.1-47.3-108.9-105.5-108.9C473.2,391.1,518.6,483,500,500z"
-                        ></path>
+                        <g id="$gat-icon-play-circle">
+                            <path
+                                id="Vector"
+                                d="M8.00065 15.1673C11.6825 15.1673 14.6673 12.1825 14.6673 8.50065C14.6673 4.81875 11.6825 1.83398 8.00065 1.83398C4.31875 1.83398 1.33398 4.81875 1.33398 8.50065C1.33398 12.1825 4.31875 15.1673 8.00065 15.1673Z"
+                                stroke="#DC3164"
+                                strokeWidth="1.33333"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                id="Vector_2"
+                                d="M6.66602 5.83398L10.666 8.50065L6.66602 11.1673V5.83398Z"
+                                stroke="#DC3164"
+                                strokeWidth="1.33333"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </g>
                     </svg>
 
-                    <span className={cx('baseLayout__header__left__text')}>
-                        SensualVisions
-                    </span>
+                    <p className="baseLayout__header__left__text neutral100 regular">
+                        Adult <span className="neutral100 bold">Play Zone</span>
+                    </p>
                 </div>
+
                 <LanguageSelector />
             </header>
             <div className="baseLayout__body">{props.children}</div>
-            <div className="baseLayout__footer">
-                <div className={cx('buttonMD neutral300')}>
-                    {props.footerText}
-                </div>
-            </div>
         </div>
     )
 }

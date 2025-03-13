@@ -1,74 +1,50 @@
-import { BrandButton, Button } from '@gataca/design-system'
+import { Button } from '@gataca/design-system'
 import cx from 'classnames'
-import { Link } from 'react-router-dom'
-import useWindowDimensions from '../customHooks/useWindowDimensions'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
-import LanguageSelector from '../components/LanguageSelector'
+import BaseLayout from '../components/BaseLayout'
 
 const HomeScreen: React.FC = React.memo((props: any) => {
     const { t } = useTranslation()
-    const { height, width } = useWindowDimensions()
-
-    let isSmall = width <= 640
-    const androidStoreLink =
-        'https://play.google.com/store/apps/details?id=com.gataca.identity'
-    const iosStoreLink = 'https://apps.apple.com/us/app/gataca/id1498607616'
 
     return (
-        <div className="initialView">
-            <div className="initialView__languageSelector">
-                <LanguageSelector />
-            </div>
+        <BaseLayout>
+            <div className="initialView">
+                <div className="initialView__content">
+                    <h1 className={cx('initialView__content_title ')}>
+                        {t('welcome')}
 
-            <div className="initialView__content">
-                <h1 className={cx('initialView__content_title')}>
-                    {t('welcome')}
-                </h1>
-                <p className={cx('bodyRegularXL')}>{t('mustBe16')}</p>
-                <a href="/adult">
-                    <Button
-                        color="purple"
-                        onPress={() => {}}
-                        showText
-                        id="verifyAge__button"
-                        state="enable"
-                        style="fill"
-                        text={t('verifyAge')}
-                        textSize="large"
-                    />
-                </a>
-
-                <p className={cx('bodyRegularMD')}>{t('youllneedIdWallet')}</p>
-
-                <div className="initialView__content__stores">
-                    <Link
-                        to={iosStoreLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <BrandButton
-                            brand="apple"
-                            color="white"
+                        <p
+                            className={cx(
+                                'initialView__content_title tertiary600'
+                            )}
+                        >
+                            Adult{' '}
+                            <span
+                                className={cx(
+                                    'initialView__content_title bold tertiary600'
+                                )}
+                            >
+                                Play Zone
+                            </span>
+                        </p>
+                    </h1>
+                    <p className={cx('bodyRegularXL')}>{t('mustBe16')}</p>
+                    <a href="/adult">
+                        <Button
+                            color="purple"
                             onPress={() => {}}
-                            size={isSmall ? 'app' : 'web'}
+                            showText
+                            id="initialView__content__button"
+                            state="enable"
+                            style="fill"
+                            text={t('verifyAge')}
+                            textSize="medium"
                         />
-                    </Link>
-                    <Link
-                        to={androidStoreLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <BrandButton
-                            brand="google"
-                            color="white"
-                            onPress={() => {}}
-                            size={isSmall ? 'app' : 'web'}
-                        />
-                    </Link>
+                    </a>
                 </div>
             </div>
-        </div>
+        </BaseLayout>
     )
 })
 

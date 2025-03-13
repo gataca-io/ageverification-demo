@@ -18,6 +18,14 @@ span {
     font-family: 'Work Sans', Arial, sans-serif;
 }
 
+.bold {
+    font-weight: 700;
+}
+
+.regular {
+    font-weight: 400;
+}
+
 /* Typo Classes */
 .heading1 {
     font-family: var(--custom);

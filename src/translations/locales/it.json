@@ -1,5 +1,4 @@
 {
-    "adultContent": "Contenuto per adulti",
     "blockedDueAge": "Questo contenuto è bloccato a causa di restrizioni di età.",
     "category_0": "Tentazione, 4 serie",
     "category_1": "Seduzione, 12 serie",
@@ -14,7 +13,10 @@
     "mustBe16": "Devi avere almeno 16 anni per accedere a questo sito.",
     "name_continue": "Continua a guardare",
     "name_newest": "Ultime uscite",
+    "recommended": "Consigliato per te",
     "requires18": "Richiede 18+",
+    "s1E1": "T1. E1",
+    "s3E3": "T3. E3",
     "title_0": "Tentazioni attuali",
     "title_1": "Incontri seducenti",
     "title_2": "Viaggi appassionati",
@@ -28,6 +30,5 @@
     "unleashDesires": "Scatena i tuoi desideri.",
     "verifyAge": "Verifica età",
     "verifyToProceed": "Verifica la tua età per procedere.",
-    "welcome": "Benvenuto su SensualVisions",
-    "youllneedIdWallet": "Avrai bisogno di un portafoglio ID con una prova valida dell'età."
+    "welcome": "Benvenuto su "
 }

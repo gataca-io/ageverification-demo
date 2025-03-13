@@ -4,16 +4,22 @@ import { Button } from '@gataca/design-system'
 import React from 'react'
 
 interface RestrictedModalProps {
+    overlay?: boolean
     close?: () => void
 }
 
 const RestrictedModal: React.FC<RestrictedModalProps> = React.memo(
-    ({ close }) => {
+    ({ overlay, close }) => {
         const { t } = useTranslation()
 
         return (
             <>
-                <div className="restrictedModal__overlay" onClick={close}></div>
+                {overlay ? (
+                    <div
+                        className="restrictedModal__overlay"
+                        onClick={close}
+                    ></div>
+                ) : null}
                 <div className="restrictedModal">
                     {close ? (
                         <div className="restrictedModal__close">

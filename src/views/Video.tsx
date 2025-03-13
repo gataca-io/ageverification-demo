@@ -53,9 +53,6 @@ const VideoScreen: React.FC = React.memo((props: any) => {
     return (
         <BaseLayout footerText={t('unleashDesires')}>
             <div className="view__content">
-                <p className={cx('bodyBoldMD neutral100')}>
-                    {t('adultContent')}
-                </p>
                 <Carrousel {...CarrouselContinue}></Carrousel>
                 <Carrousel {...CarrouselNewest}></Carrousel>
 

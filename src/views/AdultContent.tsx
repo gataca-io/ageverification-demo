@@ -43,6 +43,7 @@ const AdultContent: React.FC = React.memo((props: any) => {
     const auth = useAuth()
     console.log(JSON.stringify(auth))
     const [display, setDisplay] = useState(false)
+    const [over18Selected, setOver18Selected] = useState(false)
     const [restricted, setRestricted] = useState(false)
 
     useEffect(() => {
@@ -50,6 +51,8 @@ const AdultContent: React.FC = React.memo((props: any) => {
             console.log('USER SIGNED IN', auth.user)
         })
     })
+
+    useEffect(() => {}, [display])
 
     const authAndDisplay = async () => {
         console.log(`${JSON.stringify(process.env)} -> client_id: ${
@@ -60,6 +63,7 @@ const AdultContent: React.FC = React.memo((props: any) => {
             .then((user) => {
                 console.log('GOT USER', user)
                 if (user?.profile?.legalAge === 'accepted') {
+                    setOver18Selected(true)
                     setDisplay(true)
                 } else {
                     setRestricted(true)
@@ -74,21 +78,26 @@ const AdultContent: React.FC = React.memo((props: any) => {
     return (
         <BaseLayout footerText={t('unleashDesires')}>
             <div className="view__content">
-                <p className={cx('bodyBoldMD neutral100')}>
-                    {t('adultContent')}
-                </p>
-                <Carrousel {...CarrouselContinue}></Carrousel>
+                <Carrousel
+                    {...CarrouselContinue}
+                    display={() => authAndDisplay()}
+                ></Carrousel>
                 <Carrousel
                     {...CarrouselNewest}
                     display={() => authAndDisplay()}
+                    displayNotRestrictedVideo={() => setDisplay(true)}
                 ></Carrousel>
 
                 <VideoCard
                     display={display}
-                    close={() => setDisplay(false)}
+                    over18={over18Selected}
+                    close={() => (setDisplay(false), setOver18Selected(false))}
                 ></VideoCard>
                 {restricted && (
-                    <RestrictedModal close={() => setRestricted(false)} />
+                    <RestrictedModal
+                        close={() => setRestricted(false)}
+                        overlay
+                    />
                 )}
             </div>
         </BaseLayout>

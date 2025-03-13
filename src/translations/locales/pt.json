@@ -1,5 +1,4 @@
 {
-    "adultContent": "Conteúdo adulto",
     "blockedDueAge": "Este conteúdo está bloqueado devido a restrições de idade.",
     "category_0": "Tentação, 4 séries",
     "category_1": "Sedução, 12 séries",
@@ -14,7 +13,10 @@
     "mustBe16": "Deve ter 16 anos ou mais para aceder a este site.",
     "name_continue": "Continuar a ver",
     "name_newest": "Lançamentos mais recentes",
+    "recommended": "Recomendado para si",
     "requires18": "Requer 18+",
+    "s1E1": "T1. E1",
+    "s3E3": "T3. E3",
     "title_0": "Tentações atuais",
     "title_1": "Encontros sedutores",
     "title_2": "Jornadas apaixonadas",
@@ -28,6 +30,5 @@
     "unleashDesires": "Libere seus desejos.",
     "verifyAge": "Verificar Idade",
     "verifyToProceed": "Por favor, verifique a sua idade para continuar.",
-    "welcome": "Bem-vindo ao SensualVisions",
-    "youllneedIdWallet": "Vai precisar de uma carteira de identificação com uma prova válida de idade."
+    "welcome": "Bem-vindo ao"
 }

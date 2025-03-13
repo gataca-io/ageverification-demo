@@ -14,9 +14,31 @@ html,
 body {
     margin: 0px;
     height: 100%;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
     background-color: var(--neutral1000);
 }
 
+html::-webkit-scrollbar {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.html::-webkit-scrollbar:horizontal {
+    width: 0px;
+}
+
+body::-webkit-scrollbar {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.html::-webkit-scrollbar:horizontal {
+    width: 0px;
+}
 /* a blue color as a generic focus style */
 button:focus-visible {
     outline: 2px solid #4a90e2 !important;
@@ -224,6 +246,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+    overflow-x: hidden;
     min-height: 100%;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',

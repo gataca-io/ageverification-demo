@@ -8,6 +8,7 @@ export type ICarrouselProps = {
     name: string
     cards: ICard[]
     display?: () => void
+    displayNotRestrictedVideo?: () => void
 }
 
 const Carrousel: React.FC<ICarrouselProps> = React.memo(
@@ -16,13 +17,22 @@ const Carrousel: React.FC<ICarrouselProps> = React.memo(
 
         return (
             <div className="carrousel">
-                <div className="bodyRegularMD neutral100">{t(props.name)}</div>
-                <div className="carrousel__container marginTop20">
+                <div className="carrousel__label heading5 neutral100">
+                    {t(props.name)}
+                </div>
+                <div className="carrousel__container">
                     {props.cards?.map((c: ICard, index: number) => (
                         <Card
                             key={`card__${index}`}
                             {...c}
-                            onClick={props.display}
+                            onClick={() =>
+                                c.over18 && props.display
+                                    ? props.display()
+                                    : c?.isVideo &&
+                                      props.displayNotRestrictedVideo
+                                    ? props.displayNotRestrictedVideo()
+                                    : {}
+                            }
                         ></Card>
                     ))}
                 </div>

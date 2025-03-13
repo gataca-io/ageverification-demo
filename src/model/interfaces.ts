@@ -5,5 +5,7 @@ export type ICard = {
     over18?: boolean
     isVideo?: boolean
     category?: string
+    isLastOfList?: boolean
+    videoBottomText?: string
     onClick?: () => void
 }

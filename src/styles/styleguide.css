@@ -32,6 +32,18 @@
     --alert400: #8d1a1e;
     --alert500: #3d0608;
 
+    /* Tertiary */
+    --tertiary100: #fff2f6;
+    --tertiary200: #ffd4e1;
+    --tertiary300: #ffb6cd;
+    --tertiary400: #f97e79;
+    --tertiary500: #e85a84;
+    --tertiary600: #dc3164;
+    --tertiary700: #b22851;
+    --tertiary800: #891e3e;
+    --tertiary900: #5f152b;
+    --tertiary1000: #360c18;
+
     /* Skeletons */
     --skeletonLightBG: #e0e0e0;
 

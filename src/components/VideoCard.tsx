@@ -4,6 +4,7 @@ import './components.css'
 
 export type VideoProps = {
     close?: () => void
+    over18?: boolean
     display?: boolean
 }
 
@@ -36,7 +37,9 @@ const VideoCard: React.FC<VideoProps> = React.memo((props) => {
                         </svg>
                     </div>
                 ) : null}
-                <p className="videoCard__text">{t('contentUnlocked')}</p>
+                {props.over18 ? (
+                    <p className="videoCard__text">{t('contentUnlocked')}</p>
+                ) : null}
                 <img
                     className="videoCard__img"
                     src="https://img.freepik.com/free-vector/video-media-player-design_114579-839.jpg"
