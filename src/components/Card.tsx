@@ -3,6 +3,7 @@ import { useAuth } from 'react-oidc-context'
 import { ICard } from '../model/interfaces'
 import cx from 'classnames'
 import React from 'react'
+import './components.css'
 import { useTranslation } from 'react-i18next'
 
 const getIcon = (isLocked?: boolean) => {

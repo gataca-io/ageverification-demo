@@ -1,6 +1,7 @@
 import React from 'react'
 import { ICard } from '../model/interfaces'
 import Card from './Card'
+import './components.css'
 import { useTranslation } from 'react-i18next'
 
 export type ICarrouselProps = {

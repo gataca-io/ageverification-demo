@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import './components.css'
 
 export type VideoProps = {
     close?: () => void
