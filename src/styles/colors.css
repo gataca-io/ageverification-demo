@@ -1,0 +1,12 @@
+/* Text Colors  */
+.neutral1000 {
+    color: var(--neutral1000);
+}
+
+.neutral300 {
+    color: var(--neutral300);
+}
+
+.neutral100 {
+    color: var(--neutral100);
+}
