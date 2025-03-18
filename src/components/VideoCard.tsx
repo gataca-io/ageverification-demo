@@ -4,13 +4,13 @@ import './components.css'
 
 export type VideoProps = {
     close?: () => void
-    over18?: boolean
+    contentUnblocked?: boolean
     display?: boolean
 }
 
 const VideoCard: React.FC<VideoProps> = React.memo((props) => {
     const { t } = useTranslation()
-    const { close, display } = props
+    const { close, display, contentUnblocked } = props
 
     return display ? (
         <>
@@ -37,7 +37,7 @@ const VideoCard: React.FC<VideoProps> = React.memo((props) => {
                         </svg>
                     </div>
                 ) : null}
-                {props.over18 ? (
+                {contentUnblocked ? (
                     <p className="videoCard__text">{t('contentUnlocked')}</p>
                 ) : null}
                 <img

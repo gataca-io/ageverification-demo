@@ -6,9 +6,12 @@ import BaseLayout from '../components/BaseLayout'
 import Carrousel from '../components/Carrousel'
 import RestrictedModal from '../components/RestrictedModal'
 import VideoCard from '../components/VideoCard'
-import cx from 'classnames'
 import './views.css'
-import { CarrouselContinue, CarrouselNewest } from '../assets/data'
+import {
+    CarrouselContinue,
+    CarrouselNewest,
+    scopesAndPrData,
+} from '../assets/data'
 
 import { useTranslation } from 'react-i18next'
 import React from 'react'
@@ -20,7 +23,7 @@ const signinArgs: SigninPopupArgs = {
         width: 400,
         height: 400,
     },
-    scope: 'openid legalAge',
+    scope: `openid ${process.env.REACT_APP_SECONDARY_AGE_SCOPES}`,
 }
 
 const onSigninCallback = (_user: User | void): void => {
@@ -32,7 +35,7 @@ export const oidcConfig: AuthProviderProps = {
     client_id: `${process.env.REACT_APP_CLIENT_ID}`,
     client_secret: `${process.env.REACT_APP_CLIENT_SECRET}`,
     redirect_uri: `${process.env.REACT_APP_SERVER_NAME}/video`,
-    scope: 'openid legalAge',
+    scope: `openid ${process.env.REACT_APP_SECONDARY_AGE_SCOPES}`,
     response_mode: 'query',
     response_type: 'code',
     onSigninCallback: onSigninCallback,
@@ -43,7 +46,10 @@ const AdultContent: React.FC = React.memo((props: any) => {
     const auth = useAuth()
     console.log(JSON.stringify(auth))
     const [display, setDisplay] = useState(false)
-    const [over18Selected, setOver18Selected] = useState(false)
+    const [
+        overDifferentPrimaryAgeSelected,
+        setOverDifferentPrimaryAgeSelected,
+    ] = useState(false)
     const [restricted, setRestricted] = useState(false)
 
     useEffect(() => {
@@ -54,6 +60,13 @@ const AdultContent: React.FC = React.memo((props: any) => {
 
     useEffect(() => {}, [display])
 
+    const secondaryAgeScope = process.env.REACT_APP_SECONDARY_AGE_SCOPES
+
+    const profileData = secondaryAgeScope
+        ? scopesAndPrData?.find((el) => el.scopes?.includes(secondaryAgeScope))
+              ?.prUData
+        : undefined
+
     const authAndDisplay = async () => {
         console.log(`${JSON.stringify(process.env)} -> client_id: ${
             process.env.REACT_APP_CLIENT_ID
@@ -62,8 +75,12 @@ const AdultContent: React.FC = React.memo((props: any) => {
         auth.signinPopup(signinArgs)
             .then((user) => {
                 console.log('GOT USER', user)
-                if (user?.profile?.legalAge === 'accepted') {
-                    setOver18Selected(true)
+                if (
+                    user?.profile &&
+                    profileData &&
+                    user?.profile[profileData] === 'accepted'
+                ) {
+                    setOverDifferentPrimaryAgeSelected(true)
                     setDisplay(true)
                 } else {
                     setRestricted(true)
@@ -76,7 +93,7 @@ const AdultContent: React.FC = React.memo((props: any) => {
     }
 
     return (
-        <BaseLayout footerText={t('unleashDesires')}>
+        <BaseLayout footerText={t('unleashDesires')} noRightPadding>
             <div className="view__content">
                 <Carrousel
                     {...CarrouselContinue}
@@ -90,8 +107,13 @@ const AdultContent: React.FC = React.memo((props: any) => {
 
                 <VideoCard
                     display={display}
-                    over18={over18Selected}
-                    close={() => (setDisplay(false), setOver18Selected(false))}
+                    contentUnblocked={
+                        !!(overDifferentPrimaryAgeSelected && secondaryAgeScope)
+                    }
+                    close={() => (
+                        setDisplay(false),
+                        setOverDifferentPrimaryAgeSelected(false)
+                    )}
                 ></VideoCard>
                 {restricted && (
                     <RestrictedModal

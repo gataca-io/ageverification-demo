@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import i18n, { initialLang } from '../translations/i18n'
 import './components.css'
+import React from 'react'
 
 const languages = [
     { code: 'en', name: 'English' },

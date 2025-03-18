@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import './components.css'
-import { Button } from '@gataca/design-system'
+import { Button } from '@gataca/design-system/web'
 import React from 'react'
 
 interface RestrictedModalProps {
@@ -61,7 +61,7 @@ const RestrictedModal: React.FC<RestrictedModalProps> = React.memo(
                         </p>
                         <Button
                             color="purple"
-                            onPress={() => {}}
+                            onClick={() => {}}
                             showText
                             id="restrictedModal__content__button"
                             state="enable"

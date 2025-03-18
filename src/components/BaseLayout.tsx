@@ -1,6 +1,7 @@
 import './components.css'
 import cx from 'classnames'
 import LanguageSelector from './LanguageSelector'
+import React from 'react'
 
 const BaseLayout = (props: any) => {
     return (

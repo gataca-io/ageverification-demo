@@ -22,6 +22,8 @@ ENV CLIENT_ID ""
 ENV CLIENT_SECRET ""
 ENV IDP_HOST ""
 ENV SERVER_NAME ""
+ENV PRIMARY_AGE_SCOPE ""
+ENV SECONDARY_AGE_SCOPES=""
 
 COPY /build /usr/share/nginx/html
 COPY nginx.conf.template /etc/nginx/nginx.conf.template

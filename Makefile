@@ -23,5 +23,5 @@ deploy-dev:
 	kubectl config use-context dev && kubectl apply -f deployment/deployment-dev.yml
 
 refresh-dev:
-	kubectl config use-context dev && kubectl scale --replicas 0 deployment/legalAgeDemo -n demos && kubectl scale --replicas 1 deployment/legalAgeDemo -n demos
+	kubectl config use-context dev && kubectl scale --replicas 0 deployment/deployment-dev.yml -n demos && kubectl scale --replicas 1 deployment/deployment-dev.yml -n demos
 

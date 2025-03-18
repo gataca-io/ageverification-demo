@@ -1,6 +1,5 @@
 import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
-import XHR from 'i18next-http-backend'
 import { initReactI18next } from 'react-i18next'
 import commonEn from './locales/en.json'
 import commonEs from './locales/es.json'
@@ -34,8 +33,7 @@ const options = {
 
 const supportedLngs = ['es', 'en', 'pt', 'fr', 'de', 'it']
 
-i18n.use(XHR)
-    .use(LanguageDetector)
+i18n.use(LanguageDetector)
     .use(initReactI18next)
     .init({
         // lng: 'en' // <--- turn off for detection to work
