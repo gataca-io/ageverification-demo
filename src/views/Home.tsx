@@ -1,11 +1,14 @@
 import { Button } from '@gataca/design-system/web'
 import cx from 'classnames'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import React from 'react'
 import BaseLayout from '../components/BaseLayout'
+import { getScopeNumber } from '../assets/data'
 
 const HomeScreen: React.FC = React.memo((props: any) => {
     const { t } = useTranslation()
+    const primaryAgeScope = process.env.REACT_APP_PRIMARY_AGE_SCOPES
+    const ageScopeNumber = primaryAgeScope && getScopeNumber(primaryAgeScope)
 
     return (
         <BaseLayout>
@@ -29,7 +32,14 @@ const HomeScreen: React.FC = React.memo((props: any) => {
                             </span>
                         </p>
                     </h1>
-                    <p className={cx('bodyRegularXL')}>{t('mustBe16')}</p>
+                    {ageScopeNumber ? (
+                        <p className={cx('bodyRegularXL')}>
+                            <Trans
+                                i18nKey={'mustBeAge'}
+                                values={{ age: ageScopeNumber }}
+                            />
+                        </p>
+                    ) : null}
                     <a href="/adult">
                         <Button
                             color="purple"

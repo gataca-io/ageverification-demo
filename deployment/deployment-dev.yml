@@ -23,7 +23,7 @@ spec:
         - name: ghcr
       containers:
         - name: demoland
-          image: ghcr.io/gataca-io/ageverification-demo/legal-age-demo:2.0.0-SNAPSHOT
+          image: ghcr.io/gataca-io/ageverification-demo/legal-age-demo:2.0.2-SNAPSHOT
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -56,6 +56,10 @@ spec:
                 secretKeyRef:
                   name: vouch-demo
                   key: client_secret
+            - name: PRIMARY_AGE_SCOPE
+              value: over16fae
+            - name: SECONDARY_AGE_SCOPES
+              value: over18fae
 ---
 apiVersion: v1
 kind: Service

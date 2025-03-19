@@ -1325,9 +1325,9 @@
   integrity sha512-j61DHjsdUCKMXSdNLTOxcG701FWnF0jcqNNQi2iPCDxU8seN/sMxeh62dC++UiagCWq9ghTypX+Pcy7kX+QOeQ==
 
 "@gataca/design-system@^0.4.13":
-  version "0.4.13"
-  resolved "https://registry.yarnpkg.com/@gataca/design-system/-/design-system-0.4.13.tgz#2aec07ed2719db47facf2157817f37728b715b3d"
-  integrity sha512-qIP92/txa7a4k5uunnGHikhfkxKhq8gYLBlgxjKziaUknhHz6FUbUBRd7PPZnWf6HusyLEhWu0lP4trmAE0+lQ==
+  version "0.4.15"
+  resolved "https://registry.yarnpkg.com/@gataca/design-system/-/design-system-0.4.15.tgz#2244c8646e1432d4cace63675903d258ff5c7bbb"
+  integrity sha512-Fo1EiGBG5TXzoIrMtM4Wyze3qBPi358I++uqfT19QnyyhxwKX9JxPA5obZfeBqtpIjjW+NVUiSEywlGNvi4KZw==
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
@@ -8573,11 +8573,6 @@ serve-static@1.16.2:
     escape-html "~1.0.3"
     parseurl "~1.3.3"
     send "0.19.0"
-
-set-cookie-parser@^2.6.0:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.7.1.tgz#3016f150072202dfbe90fadee053573cc89d2943"
-  integrity sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==
 
 set-cookie-parser@^2.6.0:
   version "2.7.1"
