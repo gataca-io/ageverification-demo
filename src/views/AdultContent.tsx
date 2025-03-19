@@ -19,7 +19,7 @@ const signinArgs: SigninPopupArgs = {
         width: 400,
         height: 400,
     },
-    scope: 'openid legalAge',
+    scope: 'openid over18fae',
 }
 
 const onSigninCallback = (_user: User | void): void => {
@@ -31,7 +31,7 @@ export const oidcConfig: AuthProviderProps = {
     client_id: `${process.env.REACT_APP_CLIENT_ID}`,
     client_secret: `${process.env.REACT_APP_CLIENT_SECRET}`,
     redirect_uri: `${process.env.REACT_APP_SERVER_NAME}/video`,
-    scope: 'openid legalAge',
+    scope: 'openid over18fae',
     response_mode: 'query',
     response_type: 'code',
     onSigninCallback: onSigninCallback,
