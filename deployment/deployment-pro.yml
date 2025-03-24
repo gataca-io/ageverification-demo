@@ -58,7 +58,7 @@ spec:
                   key: client_secret
             - name: PRIMARY_AGE_SCOPE
               value: over16fae
-            - name: SECONDARY_AGE_SCOPES
+            - name: SECONDARY_AGE_SCOPE
               value: over18fae
 ---
 apiVersion: v1

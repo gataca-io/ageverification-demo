@@ -36,7 +36,7 @@ CLIENT_SECRET=********
 IDP_HOST=https://vouch.gataca.io
 SERVER_NAME=localhost ##Change to yours
 PRIMARY_AGE_SCOPE=**** ##Change
-SECONDARY_AGE_SCOPES=**** ##Change
+SECONDARY_AGE_SCOPE=**** ##Change
 ```
 
 ## Available Scripts

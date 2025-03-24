@@ -20,7 +20,7 @@ const Carrousel: React.FC<ICarrouselProps> = React.memo(
         const primaryAgeScopeNumber =
             (primaryAgeScope && getScopeNumber(primaryAgeScope)) || 0
 
-        const secondaryAgeScope = process.env.REACT_APP_SECONDARY_AGE_SCOPES
+        const secondaryAgeScope = process.env.REACT_APP_SECONDARY_AGE_SCOPE
         const secondaryAgeScopeNumber =
             (secondaryAgeScope && getScopeNumber(secondaryAgeScope)) || 0
 

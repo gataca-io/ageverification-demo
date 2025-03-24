@@ -23,7 +23,7 @@ ENV CLIENT_SECRET ""
 ENV IDP_HOST ""
 ENV SERVER_NAME ""
 ENV PRIMARY_AGE_SCOPE ""
-ENV SECONDARY_AGE_SCOPES=""
+ENV SECONDARY_AGE_SCOPE=""
 
 COPY /build /usr/share/nginx/html
 COPY nginx.conf.template /etc/nginx/nginx.conf.template
