@@ -35,7 +35,9 @@ const Card: React.FC<ICard> = React.memo((props: ICard) => {
                 )}
 
                 {props?.isVideo &&
-                    ((clicked && !!auth.user) || !props.over18) && (
+                    ((clicked && !!auth.user) ||
+                        !props.requiredScopeIsDifferentFromFirst ||
+                        !props.requiredScope) && (
                         <div className="card__content__video">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -102,21 +104,25 @@ const Card: React.FC<ICard> = React.memo((props: ICard) => {
                         </div>
                     )}
 
-                {!(clicked && !!auth.user) && props.over18 && (
-                    <div className={cx('card__content__banner')}>
-                        <Chip
-                            text={t('requires18')}
-                            color="yellow"
-                            chipSize="medium"
-                            id={'card__content__banner__chip'}
-                            containerStyle={{
-                                width: 'fit-content',
-                            }}
-                        />
+                {!(clicked && !!auth.user) &&
+                    props.requiredScope &&
+                    props.requiredScopeIsDifferentFromFirst && (
+                        <div className={cx('card__content__banner')}>
+                            <Chip
+                                text={t('requires', {
+                                    age: props.requiredScopeNumber,
+                                })}
+                                color="yellow"
+                                chipSize="medium"
+                                id={'card__content__banner__chip'}
+                                containerStyle={{
+                                    width: 'fit-content',
+                                }}
+                            />
 
-                        <LockIcon size={'16'} id="lockIcon" />
-                    </div>
-                )}
+                            <LockIcon size={'16'} id="lockIcon" />
+                        </div>
+                    )}
             </div>
         </div>
     )

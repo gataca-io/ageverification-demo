@@ -65,7 +65,7 @@ http {
              discovery = "${IDP_HOST}/.well-known/openid-configuration",
              client_id = "$CLIENT_ID",
              client_secret = "$CLIENT_SECRET",
-             scope = "openid over16fae",
+             scope = "openid $PRIMARY_AGE_SCOPE",
              auth_method = "client_secret_post",
              token_endpoint_auth_method = "client_secret_post",
              ssl_verify = "no",
@@ -102,8 +102,17 @@ http {
           --  ngx.exit(ngx.HTTP_FORBIDDEN)
           --end
 
+          map $PRIMARY_AGE_SCOPE $prUData {
+            ~^(over18)fae$  legalAge;
+            ~^(over18)      legalAge;
+            ~^(over16)fae$  over16;
+            ~^(over21)fae$  over21;
+            ~^(over65)fae$  over65;
+            default         $PRIMARY_AGE_SCOPE;  
+          }
+
           ngx.req.set_header("X-Id", res.id_token.id)
-          if res.user == nil or res.user.over16 ~= "accepted" then
+          if res.user == nil or res.user[prUData] ~= "accepted" then
             return ngx.redirect("/denied")
           end
       }
@@ -131,7 +140,7 @@ http {
              discovery = "${IDP_HOST}/.well-known/openid-configuration",
              client_id = "$CLIENT_ID",
              client_secret = "$CLIENT_SECRET",
-             scope = "openid over16fae",
+             scope = "openid $PRIMARY_AGE_SCOPE",
              auth_method = "client_secret_post",
              token_endpoint_auth_method = "client_secret_post",
              ssl_verify = "no",
@@ -168,8 +177,17 @@ http {
           --  ngx.exit(ngx.HTTP_FORBIDDEN)
           --end
 
+           map $PRIMARY_AGE_SCOPE $prUData {
+            ~^(over18)fae$  legalAge;
+            ~^(over18)      legalAge;
+            ~^(over16)fae$  over16;
+            ~^(over21)fae$  over21;
+            ~^(over65)fae$  over65;
+            default         $PRIMARY_AGE_SCOPE;  
+          }
+
           ngx.req.set_header("X-Id", res.id_token.id)
-          if res.user == nil or res.user.over16 ~= "accepted" then
+          if res.user == nil or res.user[prUData] ~= "accepted" then
             return ngx.redirect("/denied")
           end
       }
