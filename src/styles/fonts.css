@@ -1,0 +1,273 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+ul,
+li,
+span {
+    color: var(--neutral100);
+    font-family: 'Work Sans', Arial, sans-serif;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+/* Typo Classes */
+.heading1 {
+    font-family: var(--custom);
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    text-decoration: none;
+}
+
+.heading2 {
+    font-family: var(--custom);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-decoration: none;
+}
+
+.heading3 {
+    font-family: var(--custom);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    text-decoration: none;
+}
+
+.heading4 {
+    font-family: var(--custom);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.heading5 {
+    font-family: var(--custom);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-decoration: none;
+}
+
+.heading6 {
+    font-family: var(--custom);
+    line-height: 24px;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.heading7 {
+    font-family: var(--custom);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+/* Body Regular */
+.bodyRegularXL {
+    font-family: var(--base);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.bodyRegularLG {
+    font-family: var(--base);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.bodyRegularMD {
+    font-family: var(--base);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.bodyRegularSM {
+    font-family: var(--base);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.bodyRegularXS {
+    font-family: var(--base);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.bodyRegularCap {
+    font-family: var(--base);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+    text-decoration: none;
+}
+
+/* Body Bold */
+.bodyBoldXL {
+    font-family: var(--base);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.bodyBoldLG {
+    font-family: var(--base);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.bodyBoldMD {
+    font-family: var(--base);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.bodyBoldSM {
+    font-family: var(--base);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.bodyBoldXS {
+    font-family: var(--base);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.bodyBoldCap {
+    font-family: var(--base);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+/* Body Underline */
+.bodyUnderlineXL {
+    font-family: var(--base);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    text-decoration: underline;
+}
+
+.bodyUnderlineLG {
+    font-family: var(--base);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: underline;
+}
+
+.bodyUnderlineMD {
+    font-family: var(--base);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: underline;
+}
+
+.bodyUnderlineSM {
+    font-family: var(--base);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-decoration: underline;
+}
+
+.bodyUnderlineXS {
+    font-family: var(--base);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-decoration: underline;
+}
+
+.bodyUnderlineCap {
+    font-family: var(--base);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+    text-decoration: underline;
+}
+
+/* Button Types */
+.buttonLG {
+    font-family: var(--base);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.buttonMD {
+    font-family: var(--base);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.buttonSM {
+    font-family: var(--base);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.buttonXS {
+    font-family: var(--base);
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 11px;
+    text-decoration: none;
+}
+
+/* Align Classes */
+.textAlignLeft {
+    text-align: left;
+}
+
+.textAlignCenter {
+    text-align: center;
+}

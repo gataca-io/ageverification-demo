@@ -1,29 +1,59 @@
+import React from 'react'
+import './components.css'
+import cx from 'classnames'
+import LanguageSelector from './LanguageSelector'
 
+const BaseLayout = (props: any) => {
+    return (
+        <div className={cx('baseLayout')}>
+            <header className="baseLayout__header">
+                <div className="baseLayout__header__left">
+                    <svg
+                        width="16"
+                        height="17"
+                        className="baseLayout__header__left__icon"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g id="$gat-icon-play-circle">
+                            <path
+                                id="Vector"
+                                d="M8.00065 15.1673C11.6825 15.1673 14.6673 12.1825 14.6673 8.50065C14.6673 4.81875 11.6825 1.83398 8.00065 1.83398C4.31875 1.83398 1.33398 4.81875 1.33398 8.50065C1.33398 12.1825 4.31875 15.1673 8.00065 15.1673Z"
+                                stroke="#DC3164"
+                                strokeWidth="1.33333"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                id="Vector_2"
+                                d="M6.66602 5.83398L10.666 8.50065L6.66602 11.1673V5.83398Z"
+                                stroke="#DC3164"
+                                strokeWidth="1.33333"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </g>
+                    </svg>
 
-const BaseLayout = (props:any) => {
-  return (
-    <div className="screen">
-      <div className="headerBar">
-        <div className="header">
-      <svg className="icon"  viewBox="0 0 576 512">
-    <path d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
-    </path>
-  </svg>
-    <div className="headerText">
-      SensualVision
-    </div>
+                    <p className="baseLayout__header__left__text neutral100 regular">
+                        Adult <span className="neutral100 bold">Play Zone</span>
+                    </p>
+                </div>
+
+                <LanguageSelector />
+            </header>
+            <div
+                className={cx(
+                    props?.noRightPadding
+                        ? 'baseLayout__body baseLayout__body--noRightPadding'
+                        : 'baseLayout__body'
+                )}
+            >
+                {props.children}
+            </div>
         </div>
-    </div>
-      {props.children}
-    
-    
-    <div className="footer">
-    <div className="footerText center">
-      {props.footerText}
-    </div>
-    </div>
-    </div>
-  );
-};
+    )
+}
 
-export default BaseLayout;
+export default BaseLayout
