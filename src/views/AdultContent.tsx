@@ -40,27 +40,23 @@ export const oidcConfig: AuthProviderProps = {
 const AdultContent: React.FC = React.memo((props: any) => {
     const { t } = useTranslation()
     const auth = useAuth()
-    console.log(JSON.stringify(auth))
+    // console.log(JSON.stringify(auth))
     const [display, setDisplay] = useState(false)
     const [over18Selected, setOver18Selected] = useState(false)
     const [restricted, setRestricted] = useState(false)
 
     useEffect(() => {
         auth.events.addUserSignedIn(() => {
-            console.log('USER SIGNED IN', auth.user)
+            // console.log('USER SIGNED IN', auth.user)
         })
     })
 
     useEffect(() => {}, [display])
 
     const authAndDisplay = async () => {
-        console.log(`${JSON.stringify(process.env)} -> client_id: ${
-            process.env.REACT_APP_CLIENT_ID
-        }
-    client_secret: ${process.env.REACT_APP_CLIENT_SECRET}`)
         auth.signinPopup(signinArgs)
             .then((user) => {
-                console.log('GOT USER', user)
+                // console.log('GOT USER', user)
                 if (user?.profile?.legalAge === 'accepted') {
                     setOver18Selected(true)
                     setDisplay(true)
@@ -69,9 +65,8 @@ const AdultContent: React.FC = React.memo((props: any) => {
                 }
             })
             .catch((err) => {
-                console.log('ERR in OIDC', err)
+                // console.log('ERR in OIDC', err)
             })
-        console.log('TRIGGERED')
     }
 
     return (

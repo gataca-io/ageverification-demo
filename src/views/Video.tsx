@@ -26,27 +26,22 @@ const VideoScreen: React.FC = React.memo((props: any) => {
 
     useEffect(() => {
         let user = getUser()
-        console.log(user)
         auth.events.addUserSignedIn(() => {
-            console.log('USER SIGNED IN', auth.user)
+            // console.log('USER SIGNED IN', auth.user)
         })
     })
 
-    console.log('ACTIVE NAVIGATOR', auth.activeNavigator)
-
     if (auth.isLoading) {
-        console.log('loading auth')
         let user = getUser()
-        console.log(user)
     }
 
     if (auth.error) {
         //TODO: navigate to denied
-        console.log(auth.error.message)
+        // console.log(auth.error.message)
     }
 
     if (auth.isAuthenticated) {
-        console.log('Auth user', auth.user)
+        // console.log('Auth user', auth.user)
     }
 
     return (
