@@ -70,7 +70,7 @@ const AdultContent: React.FC = React.memo((props: any) => {
     const authAndDisplay = async () => {
         auth.signinPopup(signinArgs)
             .then((user) => {
-                console.log('GOT USER', user)
+                // console.log('GOT USER', user)
                 if (
                     user?.profile &&
                     profileData &&
