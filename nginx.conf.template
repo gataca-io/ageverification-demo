@@ -103,7 +103,7 @@ http {
           --end
 
           ngx.req.set_header("X-Id", res.id_token.id)
-          if res.user == nil or res.user[PRIMARY_AGE_SCOPE_DATAFIELD] ~= "accepted" then
+          if res.user == nil or res.user.$PRIMARY_AGE_SCOPE_DATAFIELD ~= "accepted" then
             return ngx.redirect("/denied")
           end
       }
@@ -169,7 +169,7 @@ http {
           --end
 
           ngx.req.set_header("X-Id", res.id_token.id)
-          if res.user == nil or res.user[$PRIMARY_AGE_SCOPE_DATAFIELD] ~= "accepted" then
+          if res.user == nil or res.user.$PRIMARY_AGE_SCOPE_DATAFIELD ~= "accepted" then
             return ngx.redirect("/denied")
           end
       }
