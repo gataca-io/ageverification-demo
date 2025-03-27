@@ -22,6 +22,9 @@ ENV CLIENT_ID ""
 ENV CLIENT_SECRET ""
 ENV IDP_HOST ""
 ENV SERVER_NAME ""
+ENV PRIMARY_AGE_SCOPE ""
+ENV PRIMARY_AGE_SCOPE_DATAFIELD "legalAge"
+ENV SECONDARY_AGE_SCOPE=""
 
 COPY /build /usr/share/nginx/html
 COPY nginx.conf.template /etc/nginx/nginx.conf.template
