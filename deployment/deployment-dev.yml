@@ -45,7 +45,7 @@ spec:
             - name: IDP_HOST
               value: https://vouch.dev.gataca.io
             - name: SERVER_NAME
-              value: legalage.dev.gataca.io
+              value: https://legalage.dev.gataca.io
             - name: CLIENT_ID
               valueFrom:
                 secretKeyRef:
