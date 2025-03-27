@@ -2,19 +2,19 @@ import type { SigninPopupArgs } from 'oidc-client-ts'
 import { User } from 'oidc-client-ts'
 import { useEffect, useState } from 'react'
 import { AuthProviderProps, useAuth } from 'react-oidc-context'
-import BaseLayout from '../components/BaseLayout'
-import Carrousel from '../components/Carrousel'
-import RestrictedModal from '../components/RestrictedModal'
-import VideoCard from '../components/VideoCard'
-import './views.css'
 import {
     CarrouselContinue,
     CarrouselNewest,
     scopesAndPrData,
 } from '../assets/data'
+import BaseLayout from '../components/BaseLayout'
+import Carrousel from '../components/Carrousel'
+import RestrictedModal from '../components/RestrictedModal'
+import VideoCard from '../components/VideoCard'
+import './views.css'
 
-import { useTranslation } from 'react-i18next'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const signinArgs: SigninPopupArgs = {
     popupWindowFeatures: {
@@ -23,7 +23,7 @@ const signinArgs: SigninPopupArgs = {
         width: 400,
         height: 400,
     },
-    scope: `openid ${process.env.REACT_APP_SECONDARY_AGE_SCOPE}`,
+    scope: `openid ${process.env.REACT_APP_VIDEO_AGE_SCOPE}`,
 }
 
 const onSigninCallback = (_user: User | void): void => {
@@ -35,7 +35,7 @@ export const oidcConfig: AuthProviderProps = {
     client_id: `${process.env.REACT_APP_CLIENT_ID}`,
     client_secret: `${process.env.REACT_APP_CLIENT_SECRET}`,
     redirect_uri: `${process.env.REACT_APP_SERVER_NAME}/video`,
-    scope: `openid ${process.env.REACT_APP_SECONDARY_AGE_SCOPE}`,
+    scope: `openid ${process.env.REACT_APP_VIDEO_AGE_SCOPE}`,
     response_mode: 'query',
     response_type: 'code',
     onSigninCallback: onSigninCallback,
@@ -60,7 +60,7 @@ const AdultContent: React.FC = React.memo((props: any) => {
 
     useEffect(() => {}, [display])
 
-    const secondaryAgeScope = process.env.REACT_APP_SECONDARY_AGE_SCOPE
+    const secondaryAgeScope = process.env.REACT_APP_VIDEO_AGE_SCOPE
 
     const profileData = secondaryAgeScope
         ? scopesAndPrData?.find((el) => el.scopes?.includes(secondaryAgeScope))

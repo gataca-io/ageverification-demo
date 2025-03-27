@@ -23,7 +23,7 @@ spec:
         - name: ghcr 
       containers:
         - name: demoland
-          image: ghcr.io/gataca-io/ageverification-demo/legal-age-demo:2.0.0-SNAPSHOT
+          image: ghcr.io/gataca-io/ageverification-demo/legal-age-demo:2.0.1-SNAPSHOT
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -45,7 +45,7 @@ spec:
             - name: IDP_HOST
               value: https://vouch.gataca.io
             - name: SERVER_NAME
-              value: legalage.gataca.io
+              value: https://legalage.gataca.io
             - name: CLIENT_ID
               valueFrom:
                 secretKeyRef:
@@ -58,6 +58,8 @@ spec:
                   key: client_secret
             - name: PRIMARY_AGE_SCOPE
               value: over16fae
+            - name: PRIMARY_AGE_SCOPE_DATAFIELD
+              value: over16
             - name: SECONDARY_AGE_SCOPE
               value: over18fae
 ---

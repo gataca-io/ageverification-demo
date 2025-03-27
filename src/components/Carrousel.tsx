@@ -1,9 +1,9 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { getScopeNumber } from '../assets/data'
 import { ICard } from '../model/interfaces'
 import Card from './Card'
 import './components.css'
-import { useTranslation } from 'react-i18next'
-import { getScopeNumber } from '../assets/data'
 
 export type ICarrouselProps = {
     name: string
@@ -20,7 +20,7 @@ const Carrousel: React.FC<ICarrouselProps> = React.memo(
         const primaryAgeScopeNumber =
             (primaryAgeScope && getScopeNumber(primaryAgeScope)) || 0
 
-        const secondaryAgeScope = process.env.REACT_APP_SECONDARY_AGE_SCOPE
+        const secondaryAgeScope = process.env.REACT_APP_VIDEO_AGE_SCOPE
         const secondaryAgeScopeNumber =
             (secondaryAgeScope && getScopeNumber(secondaryAgeScope)) || 0
 
