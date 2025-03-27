@@ -58,6 +58,8 @@ spec:
                   key: client_secret
             - name: PRIMARY_AGE_SCOPE
               value: over16fae
+            - name: PRIMARY_AGE_SCOPE_DATAFIELD
+              value: over16
             - name: SECONDARY_AGE_SCOPE
               value: over18fae
 ---
