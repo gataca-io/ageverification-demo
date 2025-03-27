@@ -23,7 +23,7 @@ spec:
         - name: ghcr 
       containers:
         - name: demoland
-          image: ghcr.io/gataca-io/ageverification-demo/legal-age-demo:2.0.1-SNAPSHOT
+          image: ghcr.io/gataca-io/ageverification-demo/legal-age-demo:2.0.2-SNAPSHOT
           imagePullPolicy: Always
           ports:
             - containerPort: 80
