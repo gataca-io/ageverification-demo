@@ -61,6 +61,24 @@
   "devDependencies": {
     "@types/react-i18next": "^8.1.0"
   },
+  "resolutions": {
+    "cookie": "^0.7.0",
+    "@babel/runtime": "^7.26.10",
+    "@babel/helpers": "^7.26.10",
+    "cross-spawn": "^7.0.5",
+    "express": "^4.21.2",
+    "postcss": "^8.4.31",
+    "nth-check": "^2.0.1"
+  },
+  "overrides": {
+    "cookie": "^0.7.0",
+    "@babel/runtime": "^7.26.10",
+    "@babel/helpers": "^7.26.10",
+    "cross-spawn": "^7.0.5",
+    "express": "^4.21.2",
+    "postcss": "^8.4.31",
+    "nth-check": "^2.0.1"
+  },
    "pre-commit": [
     "format",
     "typescript",
