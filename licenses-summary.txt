@@ -1,0 +1,18 @@
+├─ MIT: 967
+├─ ISC: 50
+├─ CC0-1.0: 41
+├─ Apache-2.0: 29
+├─ BSD-2-Clause: 27
+├─ BSD-3-Clause: 22
+├─ Unlicense: 2
+├─ BlueOak-1.0.0: 2
+├─ Custom: https://reactnative.dev: 1
+├─ MPL-2.0: 1
+├─ CC-BY-4.0: 1
+├─ (Apache-2.0 OR MPL-1.1): 1
+├─ (AFL-2.1 OR BSD-3-Clause): 1
+├─ UNLICENSED: 1
+├─ (BSD-3-Clause OR GPL-2.0): 1
+├─ 0BSD: 1
+└─ (MIT OR CC0-1.0): 1
+

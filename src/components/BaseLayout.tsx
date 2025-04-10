@@ -1,21 +1,14 @@
-import React from 'react'
-import './components.css'
-import cx from 'classnames'
-import LanguageSelector from './LanguageSelector'
+import React from 'react';
+import './components.css';
+import cx from 'classnames';
+import LanguageSelector from './LanguageSelector';
 
 const BaseLayout = (props: any) => {
     return (
         <div className={cx('baseLayout')}>
             <header className="baseLayout__header">
                 <div className="baseLayout__header__left">
-                    <svg
-                        width="16"
-                        height="17"
-                        className="baseLayout__header__left__icon"
-                        viewBox="0 0 16 17"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg width="16" height="17" className="baseLayout__header__left__icon" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="$gat-icon-play-circle">
                             <path
                                 id="Vector"
@@ -25,14 +18,7 @@ const BaseLayout = (props: any) => {
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                             />
-                            <path
-                                id="Vector_2"
-                                d="M6.66602 5.83398L10.666 8.50065L6.66602 11.1673V5.83398Z"
-                                stroke="#DC3164"
-                                strokeWidth="1.33333"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
+                            <path id="Vector_2" d="M6.66602 5.83398L10.666 8.50065L6.66602 11.1673V5.83398Z" stroke="#DC3164" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
                         </g>
                     </svg>
 
@@ -43,17 +29,9 @@ const BaseLayout = (props: any) => {
 
                 <LanguageSelector />
             </header>
-            <div
-                className={cx(
-                    props?.noRightPadding
-                        ? 'baseLayout__body baseLayout__body--noRightPadding'
-                        : 'baseLayout__body'
-                )}
-            >
-                {props.children}
-            </div>
+            <div className={cx(props?.noRightPadding ? 'baseLayout__body baseLayout__body--noRightPadding' : 'baseLayout__body')}>{props.children}</div>
         </div>
-    )
-}
+    );
+};
 
-export default BaseLayout
+export default BaseLayout;
