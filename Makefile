@@ -25,3 +25,9 @@ deploy-dev:
 refresh-dev:
 	kubectl config use-context dev && kubectl scale --replicas 0 deployment/deployment-dev.yml -n demos && kubectl scale --replicas 1 deployment/deployment-dev.yml -n demos
 
+deploy-pro:
+	kubectl config use-context pro && kubectl apply -f deployment/deployment-pro.yml
+
+refresh-pro:
+	kubectl config use-context pro && kubectl scale --replicas 0 deployment/deployment-pro.yml -n demos && kubectl scale --replicas 1 deployment/deployment-pro.yml -n demos
+
