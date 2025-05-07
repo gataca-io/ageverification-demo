@@ -17,7 +17,7 @@ snapshotX: build
 	docker buildx build --platform linux/amd64 -t ghcr.io/gataca-io/ageverification-demo/legal-age-demo:$(VERSION)-SNAPSHOT . --push
 
 releaseX: build
-	docker buildx build --platform linux/amd64 -t ghcr.io/gataca-io/ageverification-demo/legal-age-demo:$(VERSION) -t ghcr.io/gataca-io/ageverification-demo/legalAgeDemo:$(VERSION)-SNAPSHOT . --push
+	docker buildx build --platform linux/amd64 -t ghcr.io/gataca-io/ageverification-demo/legal-age-demo:$(VERSION) -t ghcr.io/gataca-io/ageverification-demo/legal-age-demo:$(VERSION)-SNAPSHOT . --push
 
 deploy-dev:
 	kubectl config use-context dev && kubectl apply -f deployment/deployment-dev.yml
