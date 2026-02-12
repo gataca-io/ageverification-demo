@@ -6,7 +6,7 @@
 }
 
 .baseLayout__header {
-    background-color: var(--neutral1000);
+    background-color: var(--general-page);
     width: 100%;
     height: fit-content;
     padding: 20px;
@@ -66,6 +66,7 @@
     width: 100%;
     height: 100%;
     padding: 63px 24px 24px;
+    background-color: var(--general-page);
 }
 
 @media (min-width: 640px) {
@@ -423,7 +424,7 @@
 }
 
 .restrictedModal__close__svg:hover > path {
-    stroke: #dc3164;
+    stroke: #3b6cf6;
 }
 
 .restrictedModal__image {
@@ -493,7 +494,7 @@
 }
 
 .videoCard__close__svg:hover > path {
-    stroke: #dc3164;
+    stroke: #3b6cf6;
 }
 
 .videoCard {
@@ -546,4 +547,45 @@
     position: absolute;
     right: 4px;
     cursor: pointer;
+}
+
+.button__ga {
+    display: flex;
+    height: 48px;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    min-height: fit-content;
+}
+
+.button__ga__primary {
+    background: var(--surface-primary-default);
+    box-shadow: 0px 2px 8px 0px rgba(71, 69, 183, 0.6);
+    color: var(--text-primary-on-color);
+}
+.button__ga__primary span {
+    color: var(--text-primary-on-color);
+}
+.button__ga__primary:hover {
+    background-color: var(--surface-primary-default-hover);
+    color: var(--text-primary-on-color-hover);
+}
+.button__ga__primary:hover span {
+    color: var(--text-primary-on-color-hover);
+}
+
+.button__ga__primary:focus {
+    background: var(--surface-primary-default);
+    box-shadow: inset 0 0 0 2px var(--borders-primary-default-subtle);
+}
+
+.button__ga__primary:focus-visible {
+    background: var(--surface-primary-default);
+    box-shadow: inset 0 0 0 2px var(--borders-primary-default-subtle);
 }

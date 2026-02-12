@@ -21,8 +21,7 @@ const Card: React.FC<ICard> = React.memo((props: ICard) => {
                     if (props.onClick) {
                         props.onClick();
                     }
-                }}
-            >
+                }}>
                 {props.title && <div className={cx('card__content__title neutral100')}>{t(props.title)}</div>}
 
                 {props?.isVideo && ((clicked && !!auth.user) || !props.requiredScopeIsDifferentFromFirst || !props.requiredScope) && (
@@ -50,7 +49,7 @@ const Card: React.FC<ICard> = React.memo((props: ICard) => {
                             </div>
                             <svg width="180" height="5" viewBox="0 0 180 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.0351562" y="0.519531" width="179.551" height="3.88217" rx="1.94109" fill="white" fillOpacity="0.3" />
-                                <rect x="0.0351562" y="0.519531" width="23.293" height="3.88217" rx="1.94109" fill="#DC3164" />
+                                <rect x="0.0351562" y="0.519531" width="23.293" height="3.88217" rx="1.94109" fill="#3B6CF6" />
                             </svg>
                         </div>
                     </div>

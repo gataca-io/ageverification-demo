@@ -17,17 +17,19 @@ const HomeScreen: React.FC = React.memo((props: any) => {
                     <h1 className={cx('initialView__content_title ')}>
                         {t('welcome')}
 
-                        <p className={cx('initialView__content_title tertiary600')}>
-                            Adult <span className={cx('initialView__content_title bold tertiary600')}>Play Zone</span>
+                        <p className={cx('initialView__content_title text-primary-default')}>
+                            Adult <span className={cx('initialView__content_title bold text-primary-default')}>Play Zone</span>
                         </p>
                     </h1>
                     {ageScopeNumber ? (
-                        <p className={cx('bodyRegularXL')}>
+                        <p className={cx('bodyRegularXL neutral-300')}>
                             <Trans i18nKey={'mustBeAge'} values={{age: ageScopeNumber}} />
                         </p>
                     ) : null}
                     <a href="/adult">
-                        <Button color="purple" onClick={() => {}} showText id="initialView__content__button" state="enable" style="fill" text={t('verifyAge')} textSize="medium" />
+                        <button className="buttonMD button__ga button__ga__primary" data-i18n="later" id="accessWithoutSaveBtn">
+                            {t('verifyAge')}
+                        </button>
                     </a>
                 </div>
             </div>

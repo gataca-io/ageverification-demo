@@ -13,12 +13,12 @@ const BaseLayout = (props: any) => {
                             <path
                                 id="Vector"
                                 d="M8.00065 15.1673C11.6825 15.1673 14.6673 12.1825 14.6673 8.50065C14.6673 4.81875 11.6825 1.83398 8.00065 1.83398C4.31875 1.83398 1.33398 4.81875 1.33398 8.50065C1.33398 12.1825 4.31875 15.1673 8.00065 15.1673Z"
-                                stroke="#DC3164"
+                                stroke="#3B6CF6"
                                 strokeWidth="1.33333"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                             />
-                            <path id="Vector_2" d="M6.66602 5.83398L10.666 8.50065L6.66602 11.1673V5.83398Z" stroke="#DC3164" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
+                            <path id="Vector_2" d="M6.66602 5.83398L10.666 8.50065L6.66602 11.1673V5.83398Z" stroke="#3B6CF6" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
                         </g>
                     </svg>
 
