@@ -26,7 +26,7 @@
     padding: 20px;
     gap: 20px;
     border-radius: 12px;
-    background: var(--neutral900);
+    background: var(--general-default-card);
 }
 
 @media (min-width: 675px) {
@@ -65,14 +65,6 @@
     width: 100%;
     gap: 16px;
     flex-wrap: wrap;
-}
-
-#initialView__content__button {
-    background-color: var(--tertiary500) !important;
-}
-
-#initialView__content__button:not(:hover) {
-    background-color: var(--tertiary600) !important;
 }
 
 /* ADULT CONTENT */

@@ -3,8 +3,181 @@
     color: var(--neutral100);
 }
 
+.neutral-300 {
+    color: var(--neutral-300);
+}
+
 .tertiary600 {
     color: var(--tertiary600);
+}
+
+/* New Amie colors */
+.text-default-heading {
+    color: var(--text-default-heading);
+}
+
+.text-default-body {
+    color: var(--text-default-body);
+}
+
+.text-default-caption {
+    color: var(--text-default-caption);
+}
+
+.text-default-placeholder {
+    color: var(--text-default-placeholder);
+}
+
+.text-on-color-heading {
+    color: var(--text-on-color-heading);
+}
+
+.text-on-color-body {
+    color: var(--text-on-color-body);
+}
+
+.text-on-color-caption {
+    color: var(--text-on-color-caption);
+}
+
+.text-on-color-placeholder {
+    color: var(--text-on-color-placeholder);
+}
+
+.text-primary-default {
+    color: var(--text-primary-default);
+}
+
+.text-primary-default-hover {
+    color: var(--text-primary-default-hover);
+}
+
+.text-primary-on-color {
+    color: var(--text-primary-on-color);
+}
+
+.text-primary-on-color-hover {
+    color: var(--text-primary-on-color-hover);
+}
+
+.text-secondary-default {
+    color: var(--text-secondary-default);
+}
+
+.text-secondary-default-hover {
+    color: var(--text-secondary-default-hover);
+}
+
+.text-secondary-on-color {
+    color: var(--text-secondary-on-color);
+}
+
+.text-secondary-on-color-hover {
+    color: var(--text-secondary-on-color-hover);
+}
+
+.text-alert-default {
+    color: var(--text-alert-default);
+}
+
+.text-alert-default-hover {
+    color: var(--text-alert-default-hover);
+}
+
+.text-alert-on-color {
+    color: var(--text-alert-on-color);
+}
+
+.text-alert-on-color-hover {
+    color: var(--text-alert-on-color-hover);
+}
+
+.text-warning-default {
+    color: var(--text-warning-default);
+}
+
+.text-warning-default-hover {
+    color: var(--text-warning-default-hover);
+}
+
+.text-warning-on-color {
+    color: var(--text-warning-on-color);
+}
+
+.text-warning-on-color-hover {
+    color: var(--text-warning-on-color-hover);
+}
+
+.text-success-default {
+    color: var(--text-success-default);
+}
+
+.text-success-default-hover {
+    color: var(--text-success-default-hover);
+}
+
+.text-success-on-color {
+    color: var(--text-success-on-color);
+}
+
+.text-success-on-color-hover {
+    color: var(--text-success-on-color-hover);
+}
+
+.text-info-default {
+    color: var(--text-info-default);
+}
+
+.text-info-default-hover {
+    color: var(--text-info-default-hover);
+}
+
+.text-info-on-color {
+    color: var(--text-info-on-color);
+}
+
+.text-info-on-color-hover {
+    color: var(--text-info-on-color-hover);
+}
+
+.text-neutral-default {
+    color: var(--text-neutral-default);
+}
+
+.text-neutral-default-hover {
+    color: var(--text-neutral-default-hover);
+}
+
+.text-neutral-on-color {
+    color: var(--text-neutral-on-color);
+}
+
+.text-neutral-on-color-hover {
+    color: var(--text-neutral-on-color-hover);
+}
+
+.text-content-default {
+    color: var(--text-content-default);
+}
+
+.text-content-default-hover {
+    color: var(--text-content-default-hover);
+}
+
+.text-content-on-color {
+    color: var(--text-content-on-color);
+}
+
+.text-content-on-color-hover {
+    color: var(--text-content-on-color-hover);
+}
+
+.text-disable-default {
+    color: var(--text-disable-default);
+}
+
+.text-disable-on-color {
+    color: var(--text-disable-on-color);
 }
 
 /* Spacing classes
