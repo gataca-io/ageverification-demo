@@ -16,8 +16,10 @@
     "i18n-js": "^3.5.1",
     "i18next": "21.10.0",
     "i18next-browser-languagedetector": "^6.1.8",
-    "i18next-http-backend": "^1.4.5",
+    "i18next-http-backend": "^3.0.6",
     "oidc-client-ts": "^3.0.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.4.1",
@@ -25,9 +27,7 @@
     "react-router-dom": "^7.3.0",
     "react-scripts": "5.0.1",
     "typescript": "^5.8.3",
-    "web-vitals": "^2.1.0",
-    "prettier": "^3.5.3",
-    "pre-commit": "^1.2.2"
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,7 +38,6 @@
     "licenses": "npx license-checker --direct --relativeLicensePath > licenses.txt && npx license-checker --direct --summary > licenses-summary.txt",
     "audit": "./audit.sh",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'"
-
   },
   "eslintConfig": {
     "extends": [
@@ -63,23 +62,27 @@
   },
   "resolutions": {
     "cookie": "^0.7.0",
-    "@babel/runtime": "^7.26.10",
-    "@babel/helpers": "^7.26.10",
+    "@babel/runtime": "^7.29.7",
+    "@babel/helpers": "^7.29.7",
     "cross-spawn": "^7.0.5",
-    "express": "^4.21.2",
-    "postcss": "^8.4.31",
-    "nth-check": "^2.0.1"
+    "express": "^4.22.3",
+    "postcss": "^8.5.29",
+    "nth-check": "^2.0.1",
+    "on-headers": "^1.1.0",
+    "underscore": "^1.13.8"
   },
   "overrides": {
     "cookie": "^0.7.0",
-    "@babel/runtime": "^7.26.10",
-    "@babel/helpers": "^7.26.10",
+    "@babel/runtime": "^7.29.7",
+    "@babel/helpers": "^7.29.7",
     "cross-spawn": "^7.0.5",
-    "express": "^4.21.2",
-    "postcss": "^8.4.31",
-    "nth-check": "^2.0.1"
+    "express": "^4.22.3",
+    "postcss": "^8.5.29",
+    "nth-check": "^2.0.1",
+    "on-headers": "^1.1.0",
+    "underscore": "^1.13.8"
   },
-   "pre-commit": [
+  "pre-commit": [
     "format",
     "typescript",
     "audit",
